@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EJEMPLO en 01</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>Condicionales</h1>
+        <button v-on:click="error=!error">Error</button>
+        <button v-on:click="success=!success">Success</button>
+        <p>error: {{ error }}, success: {{ success }}</p>
+        <p style="background-color: red" v-if="error" >ERRRRRORR..!!!!</p>
+        <p style="background-color: green" v-if="success">SATISFACTORIAMENTE :)</p>
+        <hr>
+        <h1>Listas en Loop</h1>
+        <ul>
+            <li v-for="(caracter, index) in caracteres" :key="index" >{{ index+1 }} - {{ caracter }}</li>
+        </ul>
+        <ul>
+            <li v-for="(ninja, index) in ninjas" :key="index" >{{ ninja.nombre }} con edad de {{ ninja.edad }} años.</li>
+        </ul>
+        <hr>
+        <h1>Este es un ejemplo de cpomponentes</h1>
+        <greeting></greeting>
+        <hr>
+        <h1>Este es un ejemplod e referncia</h1>
+        <form action="">
+            <input type="text" name="input" id="" ref="input">
+            <button type="button" v-on:click="readRefs">ENVIAR</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>    
+</body>
+</html>

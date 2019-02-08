@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EJEMPLO en 00</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{ nombre }}</h1>
+        El link es este <a v-bind:href="sitioweb">Google</a>
+        otra forma de hacer esto es <p v-html="esquema"></p>
+        <hr>
+        <h1>La cantidad del pedido es : {{ cantidad }}</h1>
+        <button v-on:click.once="cantidad--" >Revajar (en un solo click)</button>
+        <button v-on:click="cantidad++">Aumentar</button><br><br>
+        <button v-on:click="restar" >Revajar</button>
+        <button v-on:click="sumar">Aumentar</button><br><br>
+        <hr>
+        <a v-on:click.prevent="click" href="https://google.com">Es un link preventivo</a>
+        <hr>
+        <form action="">
+            <h1>Keyboard Event</h1>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="" v-on:keyup.enter="logNombre">
+            <label for="">Edad</label>
+            <input type="text" name="edad" id="" v-on:keyup.enter="logEdad">
+        </form>
+        <hr>
+        <form action="">
+            <h1>ENlaces bidireccionales</h1>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="" v-model="xnombre">
+            <label for="">Edad</label>
+            <input type="text" name="edad" id="" v-model="xedad"><br><br>
+            <p>Mi nombre es {{ xnombre }} y mi edad es {{ xedad }} años</p>
+        </form>
+        <hr>
+        <h1>Clases dinamicas en CSS</h1>
+        <div v-on:click="available = !available" v-bind:class="{available : available}">
+            <span>Esta es una Alerta...</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>    
+</body>
+</html>

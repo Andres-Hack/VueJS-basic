@@ -1,0 +1,17 @@
+span{
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.available span{
+    background: greenyellow;
+    color: black
+}
+
+.nearby span:after{
+    content: "!!!!";
+    margin-left: 10px;
+}
